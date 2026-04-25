@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Balance and Sustainability</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f9f4;
+            color: #333;
+        }
+
+        header {
+            background: #2e8b57;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2e8b57;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            background: #2e8b57;
+            color: white;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Balance Body Through Sustainability</h1>
+    <p>Healthy Lifestyle for Physical and Mental Balance</p>
+</header>
+
+<div class="container">
+    <h2>Introduction</h2>
+    <p>
+        Body balance means maintaining both physical and mental health in a proper way.
+        Sustainability for body balance includes healthy food, regular exercise, enough sleep,
+        hydration, stress control, and positive thinking. Small daily habits help create a strong,
+        active, and healthy life.
+    </p>
+
+    <h2>Important Points for Body Balance</h2>
+    <ul>
+        <li>Eat healthy and balanced food daily</li>
+        <li>Drink 2–3 liters of water every day</li>
+        <li>Exercise regularly like walking, yoga, or cycling</li>
+        <li>Sleep for 7–8 hours every night</li>
+        <li>Maintain good posture while sitting and walking</li>
+        <li>Avoid stress and practice meditation</li>
+        <li>Spend time outdoors and take sunlight</li>
+        <li>Stay positive and manage time properly</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        Sustainability for body balance is achieved through regular healthy habits.
+        It improves energy, fitness, mental peace, and discipline. A balanced body leads
+        to a better and happier life.
+    </p>
+</div>
+
+<footer>
+    <p>Web Development Project - Body Balance and Sustainability</p>
+</footer>
+
+</body>
+</html>
