@@ -69,13 +69,13 @@ def ensure_app_schema(conn):
     """)
 
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS ai_chat_messages (
+    CREATE TABLE IF NOT EXISTS coach_chat_messages (
         id INT AUTO_INCREMENT PRIMARY KEY,
         user_id INT NOT NULL,
         role VARCHAR(20) NOT NULL,
         message TEXT NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        INDEX idx_ai_chat_user_created (user_id, created_at),
+        INDEX idx_coach_chat_user_created (user_id, created_at),
         FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
     )
     """)
@@ -191,6 +191,8 @@ def ensure_app_schema(conn):
         ensure_column(cursor, "user_daily_metrics", column_name, definition)
 
     hostel_consumption_columns = {
+        "meal_type": "VARCHAR(30) NOT NULL DEFAULT 'meal'",
+        "items": "TEXT NOT NULL",
         "calories": "INT DEFAULT 0",
         "protein_g": "FLOAT DEFAULT 0",
         "carbs_g": "FLOAT DEFAULT 0",

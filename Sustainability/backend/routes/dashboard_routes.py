@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 from config.db import get_db_connection
 from datetime import datetime
 from utils.schema import ensure_app_schema
-from utils.ai_engine import (
+from utils.coach_engine import (
     action_center,
     calculate_health_score,
     daily_briefing,
@@ -30,13 +30,8 @@ def load_context_response(user_id):
         return None, (jsonify({"error": "Database connection failed"}), 500)
 
     try:
-        try:
-            context = fetch_user_context(conn, user_id)
-        except Exception as e:
-            if "Unknown column" not in str(e):
-                raise
-            ensure_app_schema(conn)
-            context = fetch_user_context(conn, user_id)
+        ensure_app_schema(conn)
+        context = fetch_user_context(conn, user_id)
         if not context:
             return None, (jsonify({"error": "Profile not found"}), 404)
         return context, None
@@ -51,7 +46,7 @@ def load_context_response(user_id):
 @dashboard_bp.route('/', methods=['GET'])
 def get_dashboard():
     user_id = request.args.get('user_id')
-    include_ai = request.args.get('include_ai') == 'true'
+    include_recommendations = request.args.get('include_recommendations') == 'true'
 
     context, error = load_context_response(user_id)
     if error:
@@ -92,7 +87,7 @@ def get_dashboard():
             "today_metrics": context["today_metrics"],
             "weight_forecast": forecast,
         }
-        if include_ai:
+        if include_recommendations:
             response_data.update({
                 "diet_recommendation": diet_recommendation(context),
                 "workout_recommendation": workout_recommendation(context),
